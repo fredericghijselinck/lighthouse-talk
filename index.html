@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>JWorks - Lighthouse</title>
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/ordina.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <script src="js/head.min.js"></script>
+    <!--Add support for earlier versions of Internet Explorer -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h1>Lighthouse</h1>
+                <h3>Automated audits for web pages</h3>
+                <img src="img/lighthouse-logo.png" style="vertical-align: bottom;" width="50%"/>
+            </section>
+
+            <section>
+                <h2>Hi, my name is Frédéric.</h2>
+                <p>
+                    Frontend Developer<br />
+                    Ordina Belgium<br />
+                    @f_ghijselinck<br />
+                    https://github.com/fredericghijselinck
+                </p>
+            </section>
+
+            <!-- **********
+                EDIT FROM HERE
+            ********** -->
+            <section>
+                <section>
+                    <h2>What's Lighthouse?</h2>
+                    <p class="fragment fade-in">Lighthouse is an <b>open-source</b>, automated tool for improving the quality of web pages.</p>
+                    <p class="fragment fade-in">You can run it against <b>any web page</b>, public or requiring authentication.</p>
+                    <p class="fragment fade-in">It has audits for <b>performance</b>, <b>accessibility</b>, <b>progressive web apps</b>, <b>best practices</b>, and more.</p>
+                    <aside class="notes">
+                        Any web page: Only on web servers, not a local file!
+                    </aside>
+                </section>
+                <section>
+                    <h2>How to get lighthouse?</h2>
+                    <p class="fragment fade-in">Install Chrome!</p>
+                    <p class="fragment fade-in">1. Run Lighthouse in Chrome DevTools</p>
+                    <p class="fragment fade-in">2. Run the Node command line tool</p>
+                    <p class="fragment fade-in">3. Run Lighthouse as a Chrome Extension</p>
+                </section>
+                <section>
+                    <h2>Run Lighthouse in Chrome DevTools</h2>
+                    <p class="fragment fade-in">Chrome DevTools - Audits tab</p>
+                    <img class="fragment fade-in" src="img/lighthouse-run-devtools.png" style="vertical-align: bottom;" width="50%">
+                </section>
+                <section>
+                    <h2>Install and run the Node command line tool</h2>
+                    <span class="fragment fade-in">
+                        <p>install</p>
+                        <pre><code data-trim data-noescape>
+                            npm install -g lighthouse
+                        </code></pre>
+                    </span>
+                    <span class="fragment fade-in">
+                        <p>run</p>
+                        <pre><code data-trim data-noescape>
+                        lighthouse &lt;url&gt;
+                        </code></pre>
+                    </span>
+                </section>
+                <section>
+                    <h2>Install and run Lighthouse as a Chrome Extension</h2>
+                    <p class="fragment fade-in">Open the Chrome Webstore</p>
+                    <p class="fragment fade-in">Install Lighthouse Chrome Extension</p>
+                    <img class="fragment fade-in" src="img/lighthouse-run-extension.png" style="vertical-align: bottom;" width="50%">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Default audit values</h2>
+                    <ul>
+                        <li class="fragment fade-in">Device Emulation: Nexus 5X</li>
+                        <li class="fragment fade-in">Network Throttling: 3G connection</li>
+                        <li class="fragment fade-in">CPU Throttling: 4x slowdown</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>What will be audited?</h2>
+                    <ul>
+                        <li class="fragment fade-in">Progressive Web App</li>
+                        <li class="fragment fade-in">Performance</li>
+                        <li class="fragment fade-in">Accessibility</li>
+                        <li class="fragment fade-in">Best Practices</li>
+                        <li class="fragment fade-in">SEO</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>What's in each category?</h2>
+                    <ul>
+                        <li class="fragment fade-in">Failed Audits<br/>
+                            <i>Default open</i></li>
+                        <li class="fragment fade-in">Passed Audits<br/>
+                            <i>Default collapsed</i></li>
+                        <li class="fragment fade-in">Manual checks to verify<br/>
+                            <i>ex. Site works cross-browser</i>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Share reports as JSON</h2>
+                    <span class="fragment fade-in">
+                        <p>Chrome DevTools:</p>
+                        <p>Click <i>'Download Report'</i></p>
+                    </span>
+                    <br/>
+                    <span class="fragment fade-in">
+                        <p>Command line.<br/><i>Run:</i></p>
+                        <pre><code data-trim data-noescape>
+                            lighthouse --output json --output-path &lt;path/output.json&gt;
+                        </code></pre>
+                    </span>
+                    <br/>
+                    <span class="fragment fade-in">
+                        <p>Chrome Extension:</p>
+                        <p>Click <i>'Export'</i> &gt; <i>'Save as JSON'</i></p>
+                    </span>
+                </section>
+                <section>
+                    <h2>Share reports as GitHub Gists</h2>
+                    <p class="fragment fade-in">Chrome DevTools:</p>
+                    <p class="fragment fade-in">Nope :-(</p>
+                    <br/>
+                    <p class="fragment fade-in">Command line:</p>
+                    <p class="fragment fade-in">Nope :-(</p>
+                    <br/>
+                    <p class="fragment fade-in">Chrome Extension:</p>
+                    <span class="fragment fade-in">
+                        <p>Click <i>'Export'</i> &gt; <i>'Open in Viewer'</i></p>
+                        <p>In the Viewer > Click <i>'Share'</i></p>
+                    </span>
+                </section>
+                <section>
+                    <h2>Lighthouse Report Viewer</h2>
+                    <p class="fragment fade-in">https://googlechrome.github.io/lighthouse/viewer/</p>
+                    <img class="fragment fade-in" src="img/lighthouse-viewer.png" style="vertical-align: bottom;" width="50%">
+                </section>
+            </section>
+            <section>
+                <h2>Demo time!</h2>
+            </section>
+            <section>
+                <p>Useful links</p>
+                <ul>
+                    <li>Lighthouse:<br/>
+                        <a href="https://github.com/GoogleChrome/lighthouse" target="_blank">https://github.com/GoogleChrome/lighthouse</a></li>
+                    <li>Lighthouse docs:<br/>
+                        <a href="https://developers.google.com/web/tools/lighthouse/" target="_blank">https://developers.google.com/web/tools/lighthouse/</a></li>
+                    <li>Lighthouse Viewer:<br/>
+                        <a href="https://googlechrome.github.io/lighthouse/viewer/" target="_blank">https://googlechrome.github.io/lighthouse/viewer/</a></li>
+                    <li>PWA Checklist:<br/>
+                        <a href="https://developers.google.com/web/progressive-web-apps/checklist" target="_blank">https://developers.google.com/web/progressive-web-apps/checklist</a></li>
+                    <li>Accessibility Checklist:<br/>
+                        <a href="https://developers.google.com/web/fundamentals/accessibility/" target="_blank">https://developers.google.com/web/fundamentals/accessibility/</a></li>
+                    <li>SEO guidelines:<br/>
+                        <a href="https://support.google.com/webmasters/answer/35769" target="_blank">https://support.google.com/webmasters/answer/35769</a></li>
+                    <li>Lighthouse 2.8 Updates:<br/>
+                        <a href="https://developers.google.com/web/updates/2018/02/lighthouse" target="_blank">https://developers.google.com/web/updates/2018/02/lighthouse</a></li>
+                </ul>
+            </section>
+            <!-- **********
+                DO NOT REMOVE
+            ********** -->
+            <section style="text-align: left;">
+                <h2>Thanks for watching!</h2>
+                <p class="fragment">Now kick some ass!</p>
+            </section>
+
+            <section style="text-align: left;" data-background="img/jworks-wallpaper-3.jpg"></section>
+        </div>
+    </div>
+    <script src="js/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            transition: 'convex',
+            dependencies: [
+                // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+                {
+                    src: 'lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                // Interpret Markdown in <section> elements
+                {
+                    src: 'plugin/markdown/marked.js',
+                    condition: function() {
+                        return !!document.querySelector( '[data-markdown]' );
+                    }
+                },
+                {
+                    src: 'plugin/markdown/markdown.js',
+                    condition: function() {
+                        return !!document.querySelector( '[data-markdown]' );
+                    }
+                },
+                // Syntax highlight for <code> elements
+                {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                // Zoom in and out with Alt+click
+                {
+                    src: 'plugin/zoom-js/zoom.js',
+                    async: true
+                },
+                // Speaker notes
+                {
+                    src: 'plugin/notes/notes.js',
+                    async: true
+                }
+        ]
+        });
+    </script>
+</body>
+
+</html>
